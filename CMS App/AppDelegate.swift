@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.delegate = self
 
-        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
-        let controller = masterNavigationController.topViewController as! MasterViewController
-        controller.managedObjectContext = self.managedObjectContext
+//        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
+//        let controller = masterNavigationController.topViewController as! MasterViewController
+//        controller.managedObjectContext = self.managedObjectContext
         return true
     }
 
@@ -49,7 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        do {
+            try self.saveContext()
+        } catch {
+            let nserror = error as NSError
+            let errorString = "Unresolved error \(nserror), \(nserror.userInfo)"
+            NSLog(errorString)
+        }
     }
 
     // MARK: - Split view
@@ -112,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    func saveContext() throws {
         if managedObjectContext.hasChanges {
             do {
                 try managedObjectContext.save()
@@ -120,8 +126,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                 // Replace this implementation with code to handle the error appropriately.
                 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
-                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-                abort()
+                let errorString = "Unresolved error \(nserror), \(nserror.userInfo)"
+                NSLog(errorString)
+                throw CMSCoreDataError.SaveRequestFailed(errorString)
             }
         }
     }
