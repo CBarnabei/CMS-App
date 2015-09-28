@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		444E7C9E1BA8778500426A2D /* CMSCoreDataBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E7C9D1BA8778500426A2D /* CMSCoreDataBrain.swift */; settings = {ASSET_TAGS = (); }; };
+		446ED0221BB313C200CFF4FA /* CMSErrorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */; settings = {ASSET_TAGS = (); }; };
 		448720E81BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448720E61BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		448720E91BA9C7B60072F58B /* CMSResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448720E71BA9C7B60072F58B /* CMSResource.swift */; settings = {ASSET_TAGS = (); }; };
 		449B9C081BA72D220077E28F /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B9C071BA72D220077E28F /* CategoryTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BB3204311B90C574001B7304 /* ResourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3204301B90C574001B7304 /* ResourcesTableViewController.swift */; };
-		BB3204331B90C5B5001B7304 /* ResourceBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3204321B90C5B5001B7304 /* ResourceBrain.swift */; };
+		BB3204331B90C5B5001B7304 /* ResourceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3204321B90C5B5001B7304 /* ResourceContext.swift */; };
 		BB3D8BE81B878912002B2453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8BE71B878912002B2453 /* AppDelegate.swift */; };
 		BB3D8BEB1B878912002B2453 /* CMS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8BE91B878912002B2453 /* CMS_App.xcdatamodeld */; };
 		BB3D8BED1B878912002B2453 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8BEC1B878912002B2453 /* MasterViewController.swift */; };
@@ -42,12 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		444E7C9D1BA8778500426A2D /* CMSCoreDataBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSCoreDataBrain.swift; sourceTree = "<group>"; };
+		446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSErrorBrain.swift; sourceTree = "<group>"; };
 		448720E61BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMSResource+CoreDataProperties.swift"; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSResource+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		448720E71BA9C7B60072F58B /* CMSResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSResource.swift; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSResource.swift"; sourceTree = "<absolute>"; };
-		449B9C071BA72D220077E28F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CategoryTableViewController.swift"; sourceTree = "<group>"; };
+		449B9C071BA72D220077E28F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		BB3204301B90C574001B7304 /* ResourcesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTableViewController.swift; sourceTree = "<group>"; };
-		BB3204321B90C5B5001B7304 /* ResourceBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceBrain.swift; sourceTree = "<group>"; };
+		BB3204321B90C5B5001B7304 /* ResourceContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceContext.swift; sourceTree = "<group>"; };
 		BB3D8BE41B878912002B2453 /* CMS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CMS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3D8BE71B878912002B2453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB3D8BEA1B878912002B2453 /* CMS_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CMS_App.xcdatamodel; sourceTree = "<group>"; };
@@ -123,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				BB3D8BE71B878912002B2453 /* AppDelegate.swift */,
-				444E7C9D1BA8778500426A2D /* CMSCoreDataBrain.swift */,
-				BB3204321B90C5B5001B7304 /* ResourceBrain.swift */,
+				446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */,
+				BB3204321B90C5B5001B7304 /* ResourceContext.swift */,
 				448720EA1BA9C7BE0072F58B /* Data Structures */,
 				BB3204301B90C574001B7304 /* ResourcesTableViewController.swift */,
 				449B9C071BA72D220077E28F /* CategoryTableViewController.swift */,
@@ -287,15 +287,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446ED0221BB313C200CFF4FA /* CMSErrorBrain.swift in Sources */,
 				449B9C081BA72D220077E28F /* CategoryTableViewController.swift in Sources */,
-				444E7C9E1BA8778500426A2D /* CMSCoreDataBrain.swift in Sources */,
 				448720E91BA9C7B60072F58B /* CMSResource.swift in Sources */,
 				BB3D8BE81B878912002B2453 /* AppDelegate.swift in Sources */,
 				BB3D8BEB1B878912002B2453 /* CMS_App.xcdatamodeld in Sources */,
 				BB3D8BED1B878912002B2453 /* MasterViewController.swift in Sources */,
 				BB3204311B90C574001B7304 /* ResourcesTableViewController.swift in Sources */,
 				448720E81BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift in Sources */,
-				BB3204331B90C5B5001B7304 /* ResourceBrain.swift in Sources */,
+				BB3204331B90C5B5001B7304 /* ResourceContext.swift in Sources */,
 				BB3D8BEF1B878912002B2453 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

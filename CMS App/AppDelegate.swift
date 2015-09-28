@@ -125,8 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                let errorString = "Unresolved error \(nserror), \(nserror.userInfo)"
+                let errorString = error.errorDetails
                 NSLog(errorString)
                 throw CMSCoreDataError.SaveRequestFailed(errorString)
             }
@@ -134,4 +133,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
 
 }
-
