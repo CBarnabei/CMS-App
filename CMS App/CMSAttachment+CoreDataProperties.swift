@@ -1,8 +1,8 @@
 //
-//  CMSResource+CoreDataProperties.swift
+//  CMSAttachment+CoreDataProperties.swift
 //  CMS App
 //
-//  Created by App Development on 9/16/15.
+//  Created by App Development on 10/9/15.
 //  Copyright © 2015 Magnet Library. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,9 +12,10 @@
 import Foundation
 import CoreData
 
-extension CMSResource {
+extension CMSAttachment {
 
-    @NSManaged var label: String?
-    @NSManaged var urlString: String?
+    @NSManaged var filePath: String?
+    @NSManaged var title: String?
+    @NSManaged var type: String?
 
 }

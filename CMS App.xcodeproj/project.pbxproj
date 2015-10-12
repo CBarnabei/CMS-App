@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443850471BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443850461BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift */; settings = {ASSET_TAGS = (); }; };
+		443850521BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443850501BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		443850531BC2E20D003BE7A5 /* CMSAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443850511BC2E20D003BE7A5 /* CMSAnnouncement.swift */; settings = {ASSET_TAGS = (); }; };
+		446ABA891BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446ABA871BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		446ABA8A1BC827140032A6BF /* CMSAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446ABA881BC827140032A6BF /* CMSAttachment.swift */; settings = {ASSET_TAGS = (); }; };
 		446ED0221BB313C200CFF4FA /* CMSErrorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */; settings = {ASSET_TAGS = (); }; };
+		4481E63F1BBD8D90004BEEF2 /* CMSObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E63E1BBD8D90004BEEF2 /* CMSObjectContext.swift */; settings = {ASSET_TAGS = (); }; };
 		448720E81BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448720E61BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		448720E91BA9C7B60072F58B /* CMSResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448720E71BA9C7B60072F58B /* CMSResource.swift */; settings = {ASSET_TAGS = (); }; };
 		449B9C081BA72D220077E28F /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B9C071BA72D220077E28F /* CategoryTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		44DF78EC1BB997A10072BC44 /* CMSCoreDataBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF78EB1BB997A10072BC44 /* CMSCoreDataBrain.swift */; settings = {ASSET_TAGS = (); }; };
 		BB3204311B90C574001B7304 /* ResourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3204301B90C574001B7304 /* ResourcesTableViewController.swift */; };
-		BB3204331B90C5B5001B7304 /* ResourceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3204321B90C5B5001B7304 /* ResourceContext.swift */; };
 		BB3D8BE81B878912002B2453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8BE71B878912002B2453 /* AppDelegate.swift */; };
 		BB3D8BEB1B878912002B2453 /* CMS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8BE91B878912002B2453 /* CMS_App.xcdatamodeld */; };
 		BB3D8BED1B878912002B2453 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8BEC1B878912002B2453 /* MasterViewController.swift */; };
@@ -42,12 +48,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		443850461BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSAnnouncementContext.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAnnouncementContext.swift"; sourceTree = "<group>"; };
+		443850501BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMSAnnouncement+CoreDataProperties.swift"; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAnnouncement+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		443850511BC2E20D003BE7A5 /* CMSAnnouncement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSAnnouncement.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAnnouncement.swift"; sourceTree = "<group>"; };
+		446ABA871BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMSAttachment+CoreDataProperties.swift"; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAttachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		446ABA881BC827140032A6BF /* CMSAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSAttachment.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAttachment.swift"; sourceTree = "<group>"; };
 		446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSErrorBrain.swift; sourceTree = "<group>"; };
+		4481E63E1BBD8D90004BEEF2 /* CMSObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSObjectContext.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSObjectContext.swift"; sourceTree = "<group>"; };
 		448720E61BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMSResource+CoreDataProperties.swift"; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSResource+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		448720E71BA9C7B60072F58B /* CMSResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSResource.swift; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSResource.swift"; sourceTree = "<absolute>"; };
 		449B9C071BA72D220077E28F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		44DF78EB1BB997A10072BC44 /* CMSCoreDataBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSCoreDataBrain.swift; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSCoreDataBrain.swift"; sourceTree = "<absolute>"; };
 		BB3204301B90C574001B7304 /* ResourcesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTableViewController.swift; sourceTree = "<group>"; };
-		BB3204321B90C5B5001B7304 /* ResourceContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceContext.swift; sourceTree = "<group>"; };
 		BB3D8BE41B878912002B2453 /* CMS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CMS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3D8BE71B878912002B2453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB3D8BEA1B878912002B2453 /* CMS_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CMS_App.xcdatamodel; sourceTree = "<group>"; };
@@ -93,10 +105,42 @@
 		448720EA1BA9C7BE0072F58B /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				443850501BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift */,
+				443850511BC2E20D003BE7A5 /* CMSAnnouncement.swift */,
+				446ABA871BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift */,
+				446ABA881BC827140032A6BF /* CMSAttachment.swift */,
 				448720E61BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift */,
 				448720E71BA9C7B60072F58B /* CMSResource.swift */,
 			);
 			name = "Data Structures";
+			sourceTree = "<group>";
+		};
+		44DF78ED1BB997CA0072BC44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				448720EA1BA9C7BE0072F58B /* Data Structures */,
+				44DF78EE1BB997D80072BC44 /* Brains */,
+				44DF78EF1BB997F70072BC44 /* Contexts */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		44DF78EE1BB997D80072BC44 /* Brains */ = {
+			isa = PBXGroup;
+			children = (
+				446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */,
+				44DF78EB1BB997A10072BC44 /* CMSCoreDataBrain.swift */,
+			);
+			name = Brains;
+			sourceTree = "<group>";
+		};
+		44DF78EF1BB997F70072BC44 /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+				4481E63E1BBD8D90004BEEF2 /* CMSObjectContext.swift */,
+				443850461BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift */,
+			);
+			name = Contexts;
 			sourceTree = "<group>";
 		};
 		BB3D8BDB1B878911002B2453 = {
@@ -123,9 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3D8BE71B878912002B2453 /* AppDelegate.swift */,
-				446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */,
-				BB3204321B90C5B5001B7304 /* ResourceContext.swift */,
-				448720EA1BA9C7BE0072F58B /* Data Structures */,
+				44DF78ED1BB997CA0072BC44 /* Models */,
 				BB3204301B90C574001B7304 /* ResourcesTableViewController.swift */,
 				449B9C071BA72D220077E28F /* CategoryTableViewController.swift */,
 				BB3D8BEC1B878912002B2453 /* MasterViewController.swift */,
@@ -287,15 +329,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4481E63F1BBD8D90004BEEF2 /* CMSObjectContext.swift in Sources */,
 				446ED0221BB313C200CFF4FA /* CMSErrorBrain.swift in Sources */,
 				449B9C081BA72D220077E28F /* CategoryTableViewController.swift in Sources */,
 				448720E91BA9C7B60072F58B /* CMSResource.swift in Sources */,
+				443850521BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift in Sources */,
+				44DF78EC1BB997A10072BC44 /* CMSCoreDataBrain.swift in Sources */,
 				BB3D8BE81B878912002B2453 /* AppDelegate.swift in Sources */,
 				BB3D8BEB1B878912002B2453 /* CMS_App.xcdatamodeld in Sources */,
+				446ABA891BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift in Sources */,
 				BB3D8BED1B878912002B2453 /* MasterViewController.swift in Sources */,
 				BB3204311B90C574001B7304 /* ResourcesTableViewController.swift in Sources */,
 				448720E81BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift in Sources */,
-				BB3204331B90C5B5001B7304 /* ResourceContext.swift in Sources */,
+				443850531BC2E20D003BE7A5 /* CMSAnnouncement.swift in Sources */,
+				443850471BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift in Sources */,
+				446ABA8A1BC827140032A6BF /* CMSAttachment.swift in Sources */,
 				BB3D8BEF1B878912002B2453 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -426,7 +474,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -439,7 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CMS App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cms.CMS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,7 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CMS App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cms.CMS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";

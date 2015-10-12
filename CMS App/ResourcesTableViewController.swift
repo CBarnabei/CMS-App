@@ -22,18 +22,18 @@ class ResourcesTableViewController: UITableViewController, SFSafariViewControlle
         
         tableView.rowHeight = 44
         
-        let regularSize = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count))
-        let fixedSizeWhenStartingFromCompact = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count - 1))
+        // let regularSize = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count))
+        //let fixedSizeWhenStartingFromCompact = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count - 1))
         
         let tableSize: CGSize
         if presentingViewController!.traitCollection.horizontalSizeClass == .Regular {
-            tableSize = regularSize
+            //tableSize = regularSize
         } else if presentingViewController!.traitCollection.horizontalSizeClass == .Compact {
-            tableSize = fixedSizeWhenStartingFromCompact
+            // tableSize = fixedSizeWhenStartingFromCompact
         } else {
-            tableSize = regularSize
+            //tableSize = regularSize
         }
-        preferredContentSize = tableSize
+        //preferredContentSize = tableSize
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,19 +48,22 @@ class ResourcesTableViewController: UITableViewController, SFSafariViewControlle
     // MARK: - Table view data source
     
     let cellID = "ResourceCell"
-    let resources = ResourcePackage().resources
+    //let resources = ResourcePackage().resources
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // There is no need for resources to be grouped into more than 1 section
         return 1
     }
 
+    /*
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // We should have as many rows as there are resources
         
         return resources.count
     }
+    */
 
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath)
 
@@ -69,7 +72,9 @@ class ResourcesTableViewController: UITableViewController, SFSafariViewControlle
         
         return cell
     }
+    */
     
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let URL = resources[indexPath.row].URL
         if #available(iOS 9.0, *) {
@@ -79,6 +84,7 @@ class ResourcesTableViewController: UITableViewController, SFSafariViewControlle
             UIApplication.sharedApplication().openURL(URL)
         }
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -118,6 +118,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     // MARK: - Core Data Saving support
 
+    /**
+    Saves the applications's managed object context.
+    Throws: CMSCoreDataError.SaveRequestFailed(errorString)
+    */
     func saveContext() throws {
         if managedObjectContext.hasChanges {
             do {
@@ -127,7 +131,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let errorString = error.errorDetails
                 NSLog(errorString)
-                throw CMSCoreDataError.SaveRequestFailed(errorString)
+                managedObjectContext.rollback()
+                throw CMSCoreDataError.SaveRequestFailed(errorMessage: errorString)
             }
         }
     }

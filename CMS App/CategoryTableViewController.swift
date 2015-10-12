@@ -21,18 +21,18 @@ class CategoryTableViewController: UITableViewController {
         
         tableView.rowHeight = 44
         
-        let regularSize = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count))
-        let fixedSizeWhenStartingFromCompact = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count - 1))
+        //let regularSize = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count))
+        //let fixedSizeWhenStartingFromCompact = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count - 1))
         
         let tableSize: CGSize
         if presentingViewController!.traitCollection.horizontalSizeClass == .Regular {
-            tableSize = regularSize
+            //tableSize = regularSize
         } else if presentingViewController!.traitCollection.horizontalSizeClass == .Compact {
-            tableSize = fixedSizeWhenStartingFromCompact
+            //tableSize = fixedSizeWhenStartingFromCompact
         } else {
-            tableSize = regularSize
+            //tableSize = regularSize
         }
-        preferredContentSize = tableSize
+        //preferredContentSize = tableSize
 
     }
     
@@ -48,7 +48,7 @@ class CategoryTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     let cellID = "CategoryCell"
-    let resources = ResourcePackage().resources
+    //let resources = ResourcePackage().resources
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
