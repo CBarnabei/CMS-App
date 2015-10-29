@@ -14,8 +14,25 @@ import CoreData
 
 extension CMSAttachment {
 
+    /**
+    The path to the location in storage where the actual file resides.
+    - Warning: filePath may never be nil when saving the context.
+    */
     @NSManaged var filePath: String?
+    
+    /**
+    The title to be displayed alongside the attachment.
+    - Warning: title may never be nil when saving the context.
+    */
     @NSManaged var title: String?
+    
+    /**
+    The type of file we are storing, represented as a `String`.
+    - Warning: type may never be nil when saving the context.
+    
+    Cases:
+    - ".pdf"
+    */
     @NSManaged var type: String?
 
 }

@@ -9,31 +9,56 @@
 import UIKit
 import SafariServices
 
-class ResourcesTableViewController: UITableViewController, SFSafariViewControllerDelegate {
+class CMSResourcesTableViewController: UITableViewController, SFSafariViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        tableView.rowHeight = 44
+        do {
+            try CMSResourceContext.addResource("HomeLogic", urlString: "https://logic.chambersburg.k12.pa.us/homelogic/")
+            try CMSResourceContext.addResource("Tech Handbook", urlString: "http://chambersburg.libguides.com/content.php?pid=479993&sid=3933158")
+            try CMSResourceContext.addResource("Library Resources", urlString: "http://chambersburg.libguides.com/content.php?pid=479993&sid=3933172")
+            try CMSResourceContext.addResource("CMS Homepage", urlString: "http://www.casdonline.org/education/school/school.php?sectionid=2591&")
+            try CMSResourceContext.addResource("CASD Homepage", urlString: "http://www.casdonline.org/")
+            try CMSResourceContext.addResource("CMStival", urlString: "http://cmstival.jimdo.com")
+        } catch { print("Failed to add Resource") }
         
-        // let regularSize = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count))
-        //let fixedSizeWhenStartingFromCompact = CGSizeMake(320, tableView.rowHeight * CGFloat(resources.count - 1))
-        
-        let tableSize: CGSize
-        if presentingViewController!.traitCollection.horizontalSizeClass == .Regular {
-            //tableSize = regularSize
-        } else if presentingViewController!.traitCollection.horizontalSizeClass == .Compact {
-            // tableSize = fixedSizeWhenStartingFromCompact
+        fetchResources()
+        if let resourceArray = resources {
+            tableView.rowHeight = 44
+            
+            let regularSize = CGSizeMake(320, tableView.rowHeight * CGFloat(resourceArray.count))
+            let fixedSizeWhenStartingFromCompact = CGSizeMake(320, tableView.rowHeight * CGFloat(resourceArray.count - 1))
+            
+            let tableSize: CGSize
+            if presentingViewController!.traitCollection.horizontalSizeClass == .Regular {
+                tableSize = regularSize
+            } else if presentingViewController!.traitCollection.horizontalSizeClass == .Compact {
+                tableSize = fixedSizeWhenStartingFromCompact
+            } else {
+                tableSize = regularSize
+            }
+            preferredContentSize = tableSize
+
         } else {
-            //tableSize = regularSize
+            let fetchFailureAlert = UIAlertController(title: "Something Went Wrong", message: "An error occured while fetching resources. Please try again later. If the error persists, contact the app's developers.", preferredStyle: UIAlertControllerStyle.Alert)
+            let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            fetchFailureAlert.addAction(okButton)
+            presentViewController(fetchFailureAlert, animated: true, completion: nil)
         }
-        //preferredContentSize = tableSize
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        do {
+            try CMSCoreDataBrain.deleteEverything()
+        } catch { print("deleting everything failed") }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,43 +73,46 @@ class ResourcesTableViewController: UITableViewController, SFSafariViewControlle
     // MARK: - Table view data source
     
     let cellID = "ResourceCell"
-    //let resources = ResourcePackage().resources
+    var resources: [CMSMockResource]?
+    
+    func fetchResources() {
+        do {
+            resources = try CMSResourceContext.mockResources()
+        } catch { print("Resource Fetch Failed, \(error)") }
+    }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // There is no need for resources to be grouped into more than 1 section
         return 1
     }
 
-    /*
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // We should have as many rows as there are resources
         
-        return resources.count
+        if let resourceArray = resources {
+            return resourceArray.count
+        } else { return 0 }
+        
     }
-    */
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = resources[indexPath.row].label
+        if let resourceArray = resources {
+            cell.textLabel?.text = resourceArray[indexPath.row].label
+        }
         
         return cell
     }
-    */
     
-    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let URL = resources[indexPath.row].URL
-        if #available(iOS 9.0, *) {
-            let SFVC = SFSafariViewController(URL: URL)
-            presentViewController(SFVC, animated: true, completion: nil)
-        } else {
-            UIApplication.sharedApplication().openURL(URL)
+        if let resourceArray = resources {
+            let url = resourceArray[indexPath.row].url
+            let sfvc = SFSafariViewController(URL: url)
+            presentViewController(sfvc, animated: true, completion: nil)
         }
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -123,7 +151,6 @@ class ResourcesTableViewController: UITableViewController, SFSafariViewControlle
     
     // MARK: - SafariViewController delegate
     
-    @available(iOS 9.0, *)
     func safariViewControllerDidFinish(controller: SFSafariViewController) {
         dismissViewControllerAnimated(true, completion: nil)
     }

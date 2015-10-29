@@ -9,11 +9,9 @@
 import Foundation
 import CoreData
 
-///
+/// A CMSAttachment represents a file that should be displayed alongside certain announcements.
 class CMSAttachment: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
-    
-    
 
 }

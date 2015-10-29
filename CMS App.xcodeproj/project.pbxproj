@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44075D8A1BCD5BAA002947D8 /* CMSDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44075D881BCD5BAA002947D8 /* CMSDate+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		44075D8B1BCD5BAA002947D8 /* CMSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44075D891BCD5BAA002947D8 /* CMSDate.swift */; settings = {ASSET_TAGS = (); }; };
+		441675981BCD37AE00930295 /* CMSCoreDataBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441675971BCD37AE00930295 /* CMSCoreDataBrain.swift */; settings = {ASSET_TAGS = (); }; };
 		443850471BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443850461BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift */; settings = {ASSET_TAGS = (); }; };
 		443850521BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443850501BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		443850531BC2E20D003BE7A5 /* CMSAnnouncement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443850511BC2E20D003BE7A5 /* CMSAnnouncement.swift */; settings = {ASSET_TAGS = (); }; };
+		444DEC0A1BCBEAC3009B115F /* CMSResourceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444DEC091BCBEAC3009B115F /* CMSResourceContext.swift */; settings = {ASSET_TAGS = (); }; };
 		446ABA891BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446ABA871BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		446ABA8A1BC827140032A6BF /* CMSAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446ABA881BC827140032A6BF /* CMSAttachment.swift */; settings = {ASSET_TAGS = (); }; };
 		446ED0221BB313C200CFF4FA /* CMSErrorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */; settings = {ASSET_TAGS = (); }; };
+		4471FDF01BCE8DB90068B58F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4471FDEF1BCE8DB90068B58F /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
+		44767DF91BD6AA1A0054D728 /* CMSSettingsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44767DF81BD6AA1A0054D728 /* CMSSettingsBrain.swift */; settings = {ASSET_TAGS = (); }; };
 		4481E63F1BBD8D90004BEEF2 /* CMSObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E63E1BBD8D90004BEEF2 /* CMSObjectContext.swift */; settings = {ASSET_TAGS = (); }; };
 		448720E81BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448720E61BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		448720E91BA9C7B60072F58B /* CMSResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448720E71BA9C7B60072F58B /* CMSResource.swift */; settings = {ASSET_TAGS = (); }; };
 		449B9C081BA72D220077E28F /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B9C071BA72D220077E28F /* CategoryTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		44DF78EC1BB997A10072BC44 /* CMSCoreDataBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF78EB1BB997A10072BC44 /* CMSCoreDataBrain.swift */; settings = {ASSET_TAGS = (); }; };
-		BB3204311B90C574001B7304 /* ResourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3204301B90C574001B7304 /* ResourcesTableViewController.swift */; };
+		BB3204311B90C574001B7304 /* CMSResourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3204301B90C574001B7304 /* CMSResourcesTableViewController.swift */; };
 		BB3D8BE81B878912002B2453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8BE71B878912002B2453 /* AppDelegate.swift */; };
 		BB3D8BEB1B878912002B2453 /* CMS_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8BE91B878912002B2453 /* CMS_App.xcdatamodeld */; };
 		BB3D8BED1B878912002B2453 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8BEC1B878912002B2453 /* MasterViewController.swift */; };
@@ -48,18 +53,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		443850461BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSAnnouncementContext.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAnnouncementContext.swift"; sourceTree = "<group>"; };
-		443850501BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMSAnnouncement+CoreDataProperties.swift"; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAnnouncement+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		443850511BC2E20D003BE7A5 /* CMSAnnouncement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSAnnouncement.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAnnouncement.swift"; sourceTree = "<group>"; };
-		446ABA871BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMSAttachment+CoreDataProperties.swift"; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAttachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		446ABA881BC827140032A6BF /* CMSAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSAttachment.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAttachment.swift"; sourceTree = "<group>"; };
+		44075D881BCD5BAA002947D8 /* CMSDate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		44075D891BCD5BAA002947D8 /* CMSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSDate.swift; sourceTree = "<group>"; };
+		441675971BCD37AE00930295 /* CMSCoreDataBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSCoreDataBrain.swift; sourceTree = "<group>"; };
+		443850461BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAnnouncementContext.swift; sourceTree = "<group>"; };
+		443850501BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSAnnouncement+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		443850511BC2E20D003BE7A5 /* CMSAnnouncement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAnnouncement.swift; sourceTree = "<group>"; };
+		444DEC091BCBEAC3009B115F /* CMSResourceContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSResourceContext.swift; sourceTree = "<group>"; };
+		446ABA871BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSAttachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		446ABA881BC827140032A6BF /* CMSAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAttachment.swift; sourceTree = "<group>"; };
 		446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSErrorBrain.swift; sourceTree = "<group>"; };
-		4481E63E1BBD8D90004BEEF2 /* CMSObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSObjectContext.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSObjectContext.swift"; sourceTree = "<group>"; };
+		4471FDEF1BCE8DB90068B58F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		44767DF81BD6AA1A0054D728 /* CMSSettingsBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSSettingsBrain.swift; sourceTree = "<group>"; };
+		4481E63E1BBD8D90004BEEF2 /* CMSObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSObjectContext.swift; sourceTree = "<group>"; };
 		448720E61BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMSResource+CoreDataProperties.swift"; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSResource+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		448720E71BA9C7B60072F58B /* CMSResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSResource.swift; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSResource.swift"; sourceTree = "<absolute>"; };
 		449B9C071BA72D220077E28F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
-		44DF78EB1BB997A10072BC44 /* CMSCoreDataBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSCoreDataBrain.swift; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSCoreDataBrain.swift"; sourceTree = "<absolute>"; };
-		BB3204301B90C574001B7304 /* ResourcesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTableViewController.swift; sourceTree = "<group>"; };
+		BB3204301B90C574001B7304 /* CMSResourcesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSResourcesTableViewController.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSResourcesTableViewController.swift"; sourceTree = "<group>"; };
 		BB3D8BE41B878912002B2453 /* CMS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CMS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3D8BE71B878912002B2453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB3D8BEA1B878912002B2453 /* CMS_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CMS_App.xcdatamodel; sourceTree = "<group>"; };
@@ -102,9 +112,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		446D8FCD1BCC0F2C00AD2BB8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB3D8BEC1B878912002B2453 /* MasterViewController.swift */,
+				BB3D8BEE1B878912002B2453 /* DetailViewController.swift */,
+				BB3204301B90C574001B7304 /* CMSResourcesTableViewController.swift */,
+				449B9C071BA72D220077E28F /* CategoryTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		448720EA1BA9C7BE0072F58B /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				44075D881BCD5BAA002947D8 /* CMSDate+CoreDataProperties.swift */,
+				44075D891BCD5BAA002947D8 /* CMSDate.swift */,
 				443850501BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift */,
 				443850511BC2E20D003BE7A5 /* CMSAnnouncement.swift */,
 				446ABA871BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift */,
@@ -128,8 +151,9 @@
 		44DF78EE1BB997D80072BC44 /* Brains */ = {
 			isa = PBXGroup;
 			children = (
+				44767DF81BD6AA1A0054D728 /* CMSSettingsBrain.swift */,
 				446ED0211BB313C200CFF4FA /* CMSErrorBrain.swift */,
-				44DF78EB1BB997A10072BC44 /* CMSCoreDataBrain.swift */,
+				441675971BCD37AE00930295 /* CMSCoreDataBrain.swift */,
 			);
 			name = Brains;
 			sourceTree = "<group>";
@@ -138,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				4481E63E1BBD8D90004BEEF2 /* CMSObjectContext.swift */,
+				444DEC091BCBEAC3009B115F /* CMSResourceContext.swift */,
 				443850461BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift */,
 			);
 			name = Contexts;
@@ -168,15 +193,13 @@
 			children = (
 				BB3D8BE71B878912002B2453 /* AppDelegate.swift */,
 				44DF78ED1BB997CA0072BC44 /* Models */,
-				BB3204301B90C574001B7304 /* ResourcesTableViewController.swift */,
-				449B9C071BA72D220077E28F /* CategoryTableViewController.swift */,
-				BB3D8BEC1B878912002B2453 /* MasterViewController.swift */,
-				BB3D8BEE1B878912002B2453 /* DetailViewController.swift */,
+				446D8FCD1BCC0F2C00AD2BB8 /* Controllers */,
 				BB3D8BF01B878912002B2453 /* Main.storyboard */,
 				BB3D8BF31B878912002B2453 /* Assets.xcassets */,
 				BB3D8BF51B878912002B2453 /* LaunchScreen.storyboard */,
 				BB3D8BF81B878912002B2453 /* Info.plist */,
 				BB3D8BE91B878912002B2453 /* CMS_App.xcdatamodeld */,
+				4471FDEF1BCE8DB90068B58F /* Settings.bundle */,
 			);
 			path = "CMS App";
 			sourceTree = "<group>";
@@ -266,6 +289,7 @@
 				TargetAttributes = {
 					BB3D8BE31B878911002B2453 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = ZPKPA3EA5B;
 					};
 					BB3D8BFC1B878912002B2453 = {
 						CreatedOnToolsVersion = 7.0;
@@ -302,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4471FDF01BCE8DB90068B58F /* Settings.bundle in Resources */,
 				BB3D8BF71B878912002B2453 /* LaunchScreen.storyboard in Resources */,
 				BB3D8BF41B878912002B2453 /* Assets.xcassets in Resources */,
 				BB3D8BF21B878912002B2453 /* Main.storyboard in Resources */,
@@ -329,17 +354,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44075D8A1BCD5BAA002947D8 /* CMSDate+CoreDataProperties.swift in Sources */,
 				4481E63F1BBD8D90004BEEF2 /* CMSObjectContext.swift in Sources */,
 				446ED0221BB313C200CFF4FA /* CMSErrorBrain.swift in Sources */,
 				449B9C081BA72D220077E28F /* CategoryTableViewController.swift in Sources */,
+				44075D8B1BCD5BAA002947D8 /* CMSDate.swift in Sources */,
+				441675981BCD37AE00930295 /* CMSCoreDataBrain.swift in Sources */,
 				448720E91BA9C7B60072F58B /* CMSResource.swift in Sources */,
 				443850521BC2E20D003BE7A5 /* CMSAnnouncement+CoreDataProperties.swift in Sources */,
-				44DF78EC1BB997A10072BC44 /* CMSCoreDataBrain.swift in Sources */,
 				BB3D8BE81B878912002B2453 /* AppDelegate.swift in Sources */,
+				44767DF91BD6AA1A0054D728 /* CMSSettingsBrain.swift in Sources */,
 				BB3D8BEB1B878912002B2453 /* CMS_App.xcdatamodeld in Sources */,
 				446ABA891BC827140032A6BF /* CMSAttachment+CoreDataProperties.swift in Sources */,
+				444DEC0A1BCBEAC3009B115F /* CMSResourceContext.swift in Sources */,
 				BB3D8BED1B878912002B2453 /* MasterViewController.swift in Sources */,
-				BB3204311B90C574001B7304 /* ResourcesTableViewController.swift in Sources */,
+				BB3204311B90C574001B7304 /* CMSResourcesTableViewController.swift in Sources */,
 				448720E81BA9C7B60072F58B /* CMSResource+CoreDataProperties.swift in Sources */,
 				443850531BC2E20D003BE7A5 /* CMSAnnouncement.swift in Sources */,
 				443850471BC2E0CC003BE7A5 /* CMSAnnouncementContext.swift in Sources */,
@@ -486,11 +515,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CMS App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cms.CMS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -498,11 +530,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CMS App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cms.CMS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

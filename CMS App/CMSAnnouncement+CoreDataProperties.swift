@@ -28,5 +28,8 @@ extension CMSAnnouncement {
     
     /// A collection of attachments associated with an announcement. This takes the form of an NSSet holding CMSAttachment objects.
     @NSManaged var attachments: NSSet?
+    
+    /// A collection of dates which the announcement is associated with.
+    @NSManaged var dates: NSSet?
 
 }

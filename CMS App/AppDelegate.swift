@@ -14,19 +14,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var window: UIWindow?
 
-
+    var resourceButton = UIBarButtonItem()
+    
+    var controllerOnMaster = MasterViewController()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as! UISplitViewController
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
+        controllerOnMaster = masterNavigationController.topViewController as! MasterViewController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.delegate = self
+        
+        resourceButton = controllerOnMaster.navigationItem.rightBarButtonItem!
+        print(splitViewController.collapsed)
+        switch splitViewController.collapsed {
+        case true: controllerOnMaster.navigationItem.rightBarButtonItem = resourceButton
+        case false: controllerOnMaster.navigationItem.rightBarButtonItem = nil
+        }
 
-//        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
-//        let controller = masterNavigationController.topViewController as! MasterViewController
 //        controller.managedObjectContext = self.managedObjectContext
         return true
     }
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -65,10 +76,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
         if topAsDetailController.detailItem == nil {
             // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            controllerOnMaster.navigationItem.rightBarButtonItem = resourceButton
             return true
         }
         return false
     }
+    
+    func splitViewController(splitViewController: UISplitViewController, separateSecondaryViewControllerFromPrimaryViewController primaryViewController: UIViewController) -> UIViewController? {
+        controllerOnMaster.navigationItem.rightBarButtonItem = nil
+        return nil
+    }
+    
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {

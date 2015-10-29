@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+/// A CMSResource represents a website link that will display in the app's resources menu.
 class CMSResource: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass

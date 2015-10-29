@@ -14,7 +14,16 @@ import CoreData
 
 extension CMSResource {
 
+    /**
+    The label that users will see for the resource.
+    - Warning: label may never be nil when saving the context.
+    */
     @NSManaged var label: String?
+    
+    /**
+    A `String` representation of the complete website URL.
+    - Warning: urlString may never be nil when saving the context.
+    */
     @NSManaged var urlString: String?
 
 }

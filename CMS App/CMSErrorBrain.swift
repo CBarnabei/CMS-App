@@ -16,7 +16,7 @@ A family of errors that may occur when reading and writing from Core Data.
 
 Cases:
 
-- SaveRequestFailed(errorMessage: String): The attempt to save the changes failed. This may happen if something is wrong with the SQL database or if the changes made do not meet the requirements specified in the Core Data object structure.
+- SaveRequestFailed(errorMessage: String): The attempt to save the changes failed.
 
 
 - FetchRequestFailed(errorMessage: String): The attempt to execute the fetch request failed.
@@ -28,9 +28,15 @@ Cases:
 - InvalidObject(object: NSManagedObject): A specified object was not valid for the requirements.
 */
 enum CMSCoreDataError: ErrorType {
+    
+    /// The attempt to save the changes failed. This may happen if something is wrong with the SQL database or if the changes made do not meet the requirements specified in the Core Data object structure.
     case SaveRequestFailed(errorMessage: String)
+    
     case FetchRequestFailed(errorMessage: String)
+    
     case BatchDeleteRequestFailed(errorMessage: String)
+    
+    /// A specified object was not valid for the requirements.
     case InvalidObject(object: NSManagedObject)
 }
 
@@ -40,13 +46,17 @@ A family of errors relevant to the CMSResource object.
 
 Cases:
 
-- InvalidURL(passedURL: String): The specified URL is not valid. This will happen if NSURL fails to initialize using the passed URL String.
+- InvalidURL(passedURL: String): The specified URL is not valid.
 
 
-- EmptyLabel: The passed label for the resource was an empty String. This is not allowed. A resource label must contain at least one character.
+- EmptyLabel: The passed label for the resource was an empty String.
 */
 enum CMSResourceError: ErrorType {
+    
+    /// The specified URL is not valid. This will happen if NSURL fails to initialize using the passed URL String.
     case InvalidURL(passedURL: String)
+    
+    /// The passed label for the resource was an empty String. This is not allowed. A resource label must contain at least one character.
     case EmptyLabel
 }
 
@@ -55,17 +65,23 @@ A family of errors relevant to the CMSAnnouncement object.
 
 Cases:
 
-- EmptyTitle: The passed title for the announcement was an empty String. This is not allowed. An announcement title must contain at least one character.
+- EmptyTitle: The passed title for the announcement was an empty String.
 
 
-- EmptyBody: The passed formatted text for the announcement an empty String. This is not allowed. Announcement body text must contain at least one character.
+- EmptyBody: The passed formatted text for the announcement an empty String.
 
 
-- InvalidAttachment(attachment: CMSAttachment): One or more attachments specified could not be found in the SQL database. Attachments are validated before talking to Core Data, so no requested data changes or fetches are attemped after a failed validation.
+- InvalidAttachment(attachment: CMSAttachment): One or more attachments specified could not be found in the SQL database.
 */
 enum CMSAnnouncementError: ErrorType {
+    
+    /// The passed title for the announcement was an empty String. This is not allowed. An announcement title must contain at least one character.
     case EmptyTitle
+    
+    /// The passed formatted text for the announcement an empty String. This is not allowed. Announcement body text must contain at least one character.
     case EmptyBody
+    
+    /// One or more attachments specified could not be found in the SQL database. Attachments are validated before talking to Core Data, so no requested data changes or fetches are attemped after a failed validation. The included CMSAttachment represents the first object causing a failed validation.
     case InvalidAttachment(attachment: CMSAttachment)
 }
 

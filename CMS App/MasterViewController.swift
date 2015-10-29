@@ -14,6 +14,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     var detailViewController: DetailViewController? = nil
 //    var managedObjectContext: NSManagedObjectContext? = nil
 
+    var popoverNavigationController: UINavigationController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +60,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     // MARK: - Segues
 
-    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        /*
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
             let object = self.fetchedResultsController.objectAtIndexPath(indexPath)
@@ -70,8 +71,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
+        */
+        if segue.identifier == "ResourceSegue" {
+            print("segue")
+            popoverNavigationController = segue.destinationViewController as? UINavigationController
+            if traitCollection.horizontalSizeClass == .Compact {
+                print("compact")
+                popoverNavigationController?.navigationBarHidden = false
+            } else if traitCollection.horizontalSizeClass == .Regular {
+                print("regular")
+                popoverNavigationController?.navigationBarHidden = true
+            }
+        }
     }
-    */
 
     /*
     // MARK: - Table View

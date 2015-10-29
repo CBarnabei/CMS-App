@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
     <entity name="CMSAnnouncement" representedClassName=".CMSAnnouncement" syncable="YES">
+        <attribute name="category" attributeType="String" minValueString="1" syncable="YES"/>
         <attribute name="formattedText" attributeType="String" minValueString="1" syncable="YES"/>
         <attribute name="title" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CMSAttachment" inverseName="announcements" inverseEntity="CMSAttachment" syncable="YES"/>
+        <relationship name="dates" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="CMSDate" inverseName="announcements" inverseEntity="CMSDate" syncable="YES"/>
     </entity>
     <entity name="CMSAttachment" representedClassName=".CMSAttachment" syncable="YES">
         <attribute name="filePath" attributeType="String" minValueString="1" syncable="YES"/>
@@ -11,13 +13,18 @@
         <attribute name="type" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="announcements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CMSAnnouncement" inverseName="attachments" inverseEntity="CMSAnnouncement" syncable="YES"/>
     </entity>
+    <entity name="CMSDate" representedClassName=".CMSDate" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <relationship name="announcements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CMSAnnouncement" inverseName="dates" inverseEntity="CMSAnnouncement" syncable="YES"/>
+    </entity>
     <entity name="CMSResource" representedClassName=".CMSResource" syncable="YES">
         <attribute name="label" attributeType="String" minValueString="1" syncable="YES"/>
         <attribute name="urlString" attributeType="String" minValueString="1" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CMSAnnouncement" positionX="-326" positionY="-201" width="128" height="90"/>
+        <element name="CMSAnnouncement" positionX="-326" positionY="-201" width="128" height="120"/>
         <element name="CMSAttachment" positionX="-324" positionY="-36" width="128" height="105"/>
         <element name="CMSResource" positionX="-2" positionY="-198" width="128" height="75"/>
+        <element name="CMSDate" positionX="-153" positionY="-81" width="128" height="75"/>
     </elements>
 </model>
