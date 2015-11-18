@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 /// CMSCoreDataBrain handles generic Core Data operations for creating, managing, deleting, and fetching Core Data objects.
-class CMSCoreDataBrain {
+final class CMSCoreDataBrain {
     
     /// Allows access to the application's Managed Object Context
     static let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -125,18 +125,14 @@ class CMSCoreDataBrain {
         } else if object is CMSAnnouncement {
             let announcememt = object as! CMSAnnouncement
             let title = announcememt.title!
-            let dates = announcememt.dates!
-            keyValuePairs = ["title": title, "dates": dates]
+            let endDate = announcememt.endDate
+            keyValuePairs = ["title": title, "endDate": endDate]
         } else if object is CMSAttachment {
             let attachment = object as! CMSAttachment
             let title = attachment.title!
             let type = attachment.type!
             let filePath = attachment.filePath!
             keyValuePairs = ["title": title, "type": type, "filePath": filePath]
-        } else if object is CMSDate {
-            let date = object as! CMSDate
-            let nsdate = date.date!
-            keyValuePairs = ["date": nsdate]
         } else {
             throw CMSCoreDataError.InvalidObject(object: object)
         }

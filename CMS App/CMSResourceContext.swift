@@ -15,7 +15,7 @@ struct CMSMockResource {
 }
 
 // Provides access to Recources from Core Data
-class CMSResourceContext: CMSObjectContext {
+class CMSResourceContext {
     
     static let entityName = "CMSResource"
     
@@ -29,12 +29,13 @@ class CMSResourceContext: CMSObjectContext {
         
         do {
             let resources = try fetchAll()
-            return resources.map {
+            let mockResources = resources.map {
                 resource -> CMSMockResource in
                 let label = resource.label!
                 let url = NSURL(string: resource.urlString!)!
                 return CMSMockResource(label: label, url: url)
             }
+            return mockResources.sort { $0.label < $1.label }
         } catch { throw error }
         
     }
@@ -42,7 +43,7 @@ class CMSResourceContext: CMSObjectContext {
     static func addResource(label: String, urlString: String) throws -> CMSResource {
         
         // Validate Strings
-        guard label.isValidAttributeValue() else { throw CMSResourceError.EmptyLabel }
+        guard !label.isEmpty else { throw CMSResourceError.EmptyLabel }
         guard NSURL(string: urlString) != nil else { throw CMSResourceError.InvalidURL(passedURL: urlString) }
         
         // Create Resource
@@ -58,8 +59,6 @@ class CMSResourceContext: CMSObjectContext {
 }
 
 /*
-
-
 // resources can only be added from the initializer so that they may only be changed within the definition of a resource package
 init() {
 addResource("HomeLogic", URLString: "https://logic.chambersburg.k12.pa.us/homelogic/")
@@ -68,7 +67,5 @@ addResource("Library Resources", URLString: "http://chambersburg.libguides.com/c
 addResource("CMS Homepage", URLString: "http://www.casdonline.org/education/school/school.php?sectionid=2591&")
 addResource("CASD Homepage", URLString: "http://www.casdonline.org/education/components/scrapbook/default.php?sectiondetailid=29880&")
 addResource("CMStival", URLString: "http://cmstival.jimdo.com")
-}
-
 }
 */

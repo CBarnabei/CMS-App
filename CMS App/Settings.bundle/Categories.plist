@@ -14,7 +14,7 @@
 			<key>Key</key>
 			<string>announcement_category_general</string>
 			<key>DefaultValue</key>
-			<string>ON</string>
+			<string>on</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -24,7 +24,7 @@
 			<key>Key</key>
 			<string>announcement_category_birthdays</string>
 			<key>DefaultValue</key>
-			<string>ON</string>
+			<string>on</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -54,7 +54,7 @@
 			<key>Key</key>
 			<string>announcement_category_counselor</string>
 			<key>DefaultValue</key>
-			<string>ON</string>
+			<string>on</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -64,7 +64,7 @@
 			<key>Key</key>
 			<string>announcement_category_principal</string>
 			<key>DefaultValue</key>
-			<string>ON</string>
+			<string>on</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -74,7 +74,7 @@
 			<key>Key</key>
 			<string>announcement_category_nurse</string>
 			<key>DefaultValue</key>
-			<string>ON</string>
+			<string>on</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -84,7 +84,17 @@
 			<key>Key</key>
 			<string>announcement_category_ssb</string>
 			<key>DefaultValue</key>
-			<string>ON</string>
+			<string>on</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Graduation</string>
+			<key>Key</key>
+			<string>announcement_category_graduation</string>
+			<key>DefaultValue</key>
+			<string>on</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -114,7 +124,7 @@
 			<key>Key</key>
 			<string>announcement_category_other</string>
 			<key>DefaultValue</key>
-			<string>ON</string>
+			<string>on</string>
 		</dict>
 	</array>
 </dict>

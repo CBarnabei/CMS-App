@@ -8,21 +8,47 @@
 
 import Foundation
 
-class CMSAnnouncementContext: CMSObjectContext {
+enum CMSAnnouncementCategory: String {
+    case General = "General"
+    case Birthdays = "Birthdays"
+    case Sports = "Sports"
+    case Clubs = "Clubs"
+    case Counselor = "Counselor"
+    case Principal = "Principal"
+    case Nurse = "Nurse"
+    case SSB = "Student School Board"
+    case Graduation = "Graduation"
+    case PTSA = "PTSA"
+    case FCCTC = "FCCTC"
+    case Other = "Other"
+}
+
+class CMSAnnouncementContext {
     
     static let entityName = "CMSAnnouncement"
     
-    static func fetchAll() throws -> [CMSAnnouncement] {
-        do {
+    static func fetchAnnouncements(categoryKeys: [CMSAnnouncementCategoryKey]? = nil) throws -> [CMSAnnouncement] {
+        
+        if let requestedCategories = categoryKeys {
+            
+            var subPredicates = [NSPredicate]()
+            for categoryKey in requestedCategories {
+                let predicate = NSPredicate(format: "category == %@", argumentArray: [categoryKey.rawValue])
+                subPredicates.append(predicate)
+            }
+            let compoundPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: subPredicates)
+            return try CMSCoreDataBrain.itemsForPredicate(compoundPredicate, forEntityName: entityName) as! [CMSAnnouncement]
+        } else {
             return try CMSCoreDataBrain.itemsForPredicate(nil, forEntityName: entityName) as! [CMSAnnouncement]
-        } catch { throw error }
+        }
+        
     }
     
-    static func addAnnouncement(title: String, text: String, attachments: [CMSAttachment] = []) throws -> CMSAnnouncement {
+    static func addAnnouncement(title: String, body: String, category: CMSAnnouncementCategory, endDate: NSDate, attachments: [CMSAttachment] = []) throws -> CMSAnnouncement {
         
         // Validate Strings
-        guard title.isValidAttributeValue() else { throw CMSAnnouncementError.EmptyTitle }
-        guard text.isValidAttributeValue() else { throw CMSAnnouncementError.EmptyBody }
+        guard !title.isEmpty else { throw CMSAnnouncementError.EmptyTitle }
+        guard !body.isEmpty else { throw CMSAnnouncementError.EmptyBody }
         
         // Validate Attachments
         let validatedAttachments: [CMSAttachment]
@@ -38,7 +64,9 @@ class CMSAnnouncementContext: CMSObjectContext {
         do {
             let announcement = try CMSCoreDataBrain.createCustomizableItemForEntity(entityName) as! CMSAnnouncement
             announcement.title = title
-            announcement.formattedText = text
+            announcement.formattedText = body
+            announcement.category = category.rawValue
+            announcement.endDate = endDate
             announcement.attachments = Set(validatedAttachments)
             try CMSCoreDataBrain.saveContext()
             return announcement

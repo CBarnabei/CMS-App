@@ -7,18 +7,14 @@
 //
 
 import XCTest
-@testable import CMS_App
+@testable import CMS_Now
 
 class CMS_AppTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        do {
-            try CMSCoreDataBrain.deleteEverything()
-        } catch {
-            XCTFail("Deleting Everything Failed")
-        }
+        
     }
     
     override func tearDown() {
@@ -28,18 +24,7 @@ class CMS_AppTests: XCTestCase {
     }
     
     func testDriveStorage() {
-        do {
-            
-            let resource = try CMSResourceContext.addResource("HomeLogic", urlString: "https://logic.chambersburg.k12.pa.us/homelogic/")
-            XCTAssert(resource.label == "HomeLogic")
-            XCTAssert(resource.url == "https://logic.chambersburg.k12.pa.us/homelogic/")
-            
-            let resources = try CMSResourceContext.fetchAll()
-            XCTAssert(resources.count == 1)
-            
-            try CMSResourceContext.delete(resource)
-            
-        } catch { XCTFail() }
+        
     }
     
     func testPerformanceExample() {

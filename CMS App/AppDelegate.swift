@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CMS App
+//  CMS App v0.0.1
 //
 //  Created by Magnet Library on 8/21/15.
 //  Copyright © 2015 Magnet Library. All rights reserved.
@@ -16,14 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var resourceButton = UIBarButtonItem()
     
-    var controllerOnMaster = MasterViewController()
+    var controllerOnMaster = CMSAnnouncementTableViewController()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as! UISplitViewController
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
-        controllerOnMaster = masterNavigationController.topViewController as! MasterViewController
+        controllerOnMaster = masterNavigationController.topViewController as! CMSAnnouncementTableViewController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.delegate = self
         
@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? CMSAnnouncementViewController else { return false }
         if topAsDetailController.detailItem == nil {
             // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
             controllerOnMaster.navigationItem.rightBarButtonItem = resourceButton
