@@ -120,24 +120,23 @@ final class CMSCoreDataBrain {
         var keyValuePairs = [String : AnyObject]()
         if object is CMSResource {
             let resource = object as! CMSResource
-            let label = resource.label!
-            keyValuePairs = ["label": label]
+            let recordID = resource.recordID
+            keyValuePairs = ["recordID": recordID]
         } else if object is CMSAnnouncement {
             let announcememt = object as! CMSAnnouncement
-            let title = announcememt.title!
-            let endDate = announcememt.endDate
-            keyValuePairs = ["title": title, "endDate": endDate]
+            let recordID = announcememt.recordID
+            keyValuePairs = ["recordID": recordID]
         } else if object is CMSAttachment {
             let attachment = object as! CMSAttachment
-            let title = attachment.title!
-            let type = attachment.type!
-            let filePath = attachment.filePath!
-            keyValuePairs = ["title": title, "type": type, "filePath": filePath]
+            let recordID = attachment.recordID
+            keyValuePairs = ["recordID": recordID]
         } else {
             throw CMSCoreDataError.InvalidObject(object: object)
         }
         do {
-            return try itemsForKeyValuePairs(keyValuePairs, forEntityName: entityName)[0]
+            let results = try itemsForKeyValuePairs(keyValuePairs, forEntityName: entityName)
+            guard results.count == 1 else { throw CMSCoreDataError.CorruptObject(object: object) }
+            return results[0]
         } catch { throw error }
     }
     
@@ -173,9 +172,9 @@ final class CMSCoreDataBrain {
     */
     static func deleteAllForEntity(entityName: String, saveOnCompletion: Bool = true) throws {
         do {
-            let fetchRequest = NSFetchRequest(entityName: entityName)
-            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-            try context.executeRequest(deleteRequest)
+            for item in try itemsForPredicate(nil, forEntityName: entityName) {
+                try deleteItem(item, saveOnCompletion: false)
+            }
         } catch {
             context.rollback()
             throw CMSCoreDataError.BatchDeleteRequestFailed(errorMessage: error.errorDetails)

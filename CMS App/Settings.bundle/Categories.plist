@@ -8,23 +8,43 @@
 	<array>
 		<dict>
 			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Lunch</string>
+			<key>Key</key>
+			<string>announcement_category_lunch</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>General</string>
-			<key>Key</key>
-			<string>announcement_category_general</string>
 			<key>DefaultValue</key>
 			<string>on</string>
+			<key>Key</key>
+			<string>general_label</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Events</string>
+			<key>DefaultValue</key>
+			<string>on</string>
+			<key>Key</key>
+			<string>events_label</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>Birthdays</string>
-			<key>Key</key>
-			<string>announcement_category_birthdays</string>
 			<key>DefaultValue</key>
 			<string>on</string>
+			<key>Key</key>
+			<string>birthdays_label</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -34,7 +54,7 @@
 			<key>Key</key>
 			<string>announcement_category_sports</string>
 			<key>DefaultValue</key>
-			<string>YES</string>
+			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -44,57 +64,57 @@
 			<key>Key</key>
 			<string>announcement_category_clubs</string>
 			<key>DefaultValue</key>
-			<string>YES</string>
+			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>Counselor</string>
-			<key>Key</key>
-			<string>announcement_category_counselor</string>
 			<key>DefaultValue</key>
 			<string>on</string>
+			<key>Key</key>
+			<string>counselor_label</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>Principal</string>
-			<key>Key</key>
-			<string>announcement_category_principal</string>
 			<key>DefaultValue</key>
 			<string>on</string>
+			<key>Key</key>
+			<string>principal_label</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>Nurse</string>
-			<key>Key</key>
-			<string>announcement_category_nurse</string>
 			<key>DefaultValue</key>
 			<string>on</string>
+			<key>Key</key>
+			<string>nurse_label</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>Student School Board</string>
-			<key>Key</key>
-			<string>announcement_category_ssb</string>
 			<key>DefaultValue</key>
 			<string>on</string>
+			<key>Key</key>
+			<string>ssb_label</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>Graduation</string>
-			<key>Key</key>
-			<string>announcement_category_graduation</string>
 			<key>DefaultValue</key>
 			<string>on</string>
+			<key>Key</key>
+			<string>graduation_label</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -104,7 +124,7 @@
 			<key>Key</key>
 			<string>announcement_category_ptsa</string>
 			<key>DefaultValue</key>
-			<string>YES</string>
+			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -112,19 +132,9 @@
 			<key>Title</key>
 			<string>FCCTC</string>
 			<key>Key</key>
-			<string>announcement_category_fcctc</string>
+			<string>announcement_category_ptsa</string>
 			<key>DefaultValue</key>
-			<string>YES</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Other</string>
-			<key>Key</key>
-			<string>announcement_category_other</string>
-			<key>DefaultValue</key>
-			<string>on</string>
+			<true/>
 		</dict>
 	</array>
 </dict>

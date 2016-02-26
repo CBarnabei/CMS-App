@@ -38,6 +38,18 @@ enum CMSCoreDataError: ErrorType {
     
     /// A specified object was not valid for the requirements.
     case InvalidObject(object: NSManagedObject)
+    
+    case CorruptObject(object: NSManagedObject)
+}
+
+enum CMSCloudError: ErrorType {
+    /// Thrown when a CKRecord corresponding to one type of Core Data object was passed to a context for a different Core Data object.
+    case RecordOfWrongType
+    case InvalidAssetUrlFromCloudKit
+}
+
+enum CMSFileError: ErrorType {
+    case FileAlreadyExists
 }
 
 
@@ -58,6 +70,10 @@ enum CMSResourceError: ErrorType {
     
     /// The passed label for the resource was an empty String. This is not allowed. A resource label must contain at least one character.
     case EmptyLabel
+    
+    case DuplicateResource
+    
+    case IDNotFound
 }
 
 /**
@@ -83,10 +99,24 @@ enum CMSAnnouncementError: ErrorType {
     
     /// One or more attachments specified could not be found in the SQL database. Attachments are validated before talking to Core Data, so no requested data changes or fetches are attemped after a failed validation. The included CMSAttachment represents the first object causing a failed validation.
     case InvalidAttachment(attachment: CMSAttachment)
+    
+    case InvalidDate(date: NSDate)
+    
+    case DuplicateAnnouncement
+    
+    case IDNotFound
 }
 
 /// An undecalred family of errors for the CMSAttachment object.
-enum CMSAttachmentError: ErrorType {}
+enum CMSAttachmentError: ErrorType {
+    case EmptyTitle
+    case EmptyFile
+    case InvalidAnnouncement(announcement: CMSAnnouncement)
+    case FileWriteFailed
+    case FileDeletionFailed
+    case DuplicateAttachment
+    case IDNotFound
+}
 
 extension ErrorType {
     
