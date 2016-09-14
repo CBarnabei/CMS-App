@@ -31,7 +31,7 @@
 		44AF4F4D1C6BDD48000480FF /* CMSAnnouncementContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F4C1C6BDD48000480FF /* CMSAnnouncementContext.swift */; };
 		44AF4F4F1C6BDD52000480FF /* CMSAttachmentContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F4E1C6BDD52000480FF /* CMSAttachmentContext.swift */; };
 		44AF4F511C6BDD5B000480FF /* CMSResourceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F501C6BDD5B000480FF /* CMSResourceContext.swift */; };
-		44AF4F531C6BDD96000480FF /* CMSAnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F521C6BDD96000480FF /* CMSAnnouncementCell.swift */; };
+		44AF4F531C6BDD96000480FF /* CMSAnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F521C6BDD96000480FF /* CMSAnnouncementTableViewCell.swift */; };
 		44AF4F561C6BDDBA000480FF /* CMSAnnouncementSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F551C6BDDBA000480FF /* CMSAnnouncementSplitViewController.swift */; };
 		44AF4F581C6BDDCD000480FF /* CMSAnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F571C6BDDCD000480FF /* CMSAnnouncementTableViewController.swift */; };
 		44AF4F5A1C6BDDD6000480FF /* CMSAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F591C6BDDD6000480FF /* CMSAnnouncementViewController.swift */; };
@@ -41,9 +41,10 @@
 		44AF4F621C6BDE06000480FF /* CMSCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F611C6BDE06000480FF /* CMSCategoryTableViewController.swift */; };
 		44AF4F641C6BDE13000480FF /* CMSResourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F631C6BDE13000480FF /* CMSResourcesTableViewController.swift */; };
 		44AF4F661C6BDE1B000480FF /* CMSShellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF4F651C6BDE1B000480FF /* CMSShellViewController.swift */; };
-		44C094971C6BE7BB005F5340 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C094961C6BE7BB005F5340 /* CloudKit.framework */; };
+		44E59F7B1C8DF83C00243AB6 /* CMSProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44E59F7A1C8DF83C00243AB6 /* CMSProgressView.xib */; };
+		44E59F7D1C8DF8C300243AB6 /* CMSProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E59F7C1C8DF8C300243AB6 /* CMSProgressView.swift */; };
+		44F8C1341CC8FB9D00707316 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F8C1331CC8FB9D00707316 /* CloudKit.framework */; };
 		BB3D8BF41B878912002B2453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3D8BF31B878912002B2453 /* Assets.xcassets */; };
-		BB3D8BF71B878912002B2453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3D8BF51B878912002B2453 /* LaunchScreen.storyboard */; };
 		BB3D8C021B878912002B2453 /* CMS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8C011B878912002B2453 /* CMS_AppTests.swift */; };
 		BB3D8C0D1B878912002B2453 /* CMS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D8C0C1B878912002B2453 /* CMS_AppUITests.swift */; };
 /* End PBXBuildFile section */
@@ -67,8 +68,8 @@
 
 /* Begin PBXFileReference section */
 		44274A861C74A642007B19EB /* ScheduledClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledClosure.swift; sourceTree = "<group>"; };
-		443897251C6BDEFB005FC567 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
-		443897271C6BDF34005FC567 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/Settings.bundle"; sourceTree = "<group>"; };
+		443897251C6BDEFB005FC567 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/Base.lproj/Main.storyboard"; sourceTree = "<absolute>"; };
+		443897271C6BDF34005FC567 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = "../../../../../../AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/Settings.bundle"; sourceTree = "<group>"; };
 		443CD42D1C7E14190056A791 /* CMSAnnouncementDetailNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSAnnouncementDetailNavigationController.swift; path = "/Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSAnnouncementDetailNavigationController.swift"; sourceTree = "<absolute>"; };
 		449AD6841BF4F95D001E064A /* CMS Now.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "CMS Now.entitlements"; sourceTree = "<group>"; };
 		44AF4F291C6BDB33000480FF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +92,7 @@
 		44AF4F4C1C6BDD48000480FF /* CMSAnnouncementContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAnnouncementContext.swift; sourceTree = "<group>"; };
 		44AF4F4E1C6BDD52000480FF /* CMSAttachmentContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAttachmentContext.swift; sourceTree = "<group>"; };
 		44AF4F501C6BDD5B000480FF /* CMSResourceContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSResourceContext.swift; sourceTree = "<group>"; };
-		44AF4F521C6BDD96000480FF /* CMSAnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAnnouncementCell.swift; sourceTree = "<group>"; };
+		44AF4F521C6BDD96000480FF /* CMSAnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		44AF4F551C6BDDBA000480FF /* CMSAnnouncementSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAnnouncementSplitViewController.swift; sourceTree = "<group>"; };
 		44AF4F571C6BDDCD000480FF /* CMSAnnouncementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAnnouncementTableViewController.swift; sourceTree = "<group>"; };
 		44AF4F591C6BDDD6000480FF /* CMSAnnouncementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSAnnouncementViewController.swift; sourceTree = "<group>"; };
@@ -101,10 +102,11 @@
 		44AF4F611C6BDE06000480FF /* CMSCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSCategoryTableViewController.swift; sourceTree = "<group>"; };
 		44AF4F631C6BDE13000480FF /* CMSResourcesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSResourcesTableViewController.swift; sourceTree = "<group>"; };
 		44AF4F651C6BDE1B000480FF /* CMSShellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSShellViewController.swift; sourceTree = "<group>"; };
-		44C094961C6BE7BB005F5340 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		44E59F7A1C8DF83C00243AB6 /* CMSProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CMSProgressView.xib; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSProgressView.xib"; sourceTree = "<group>"; };
+		44E59F7C1C8DF8C300243AB6 /* CMSProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMSProgressView.swift; path = "../../../../../../../../Users/AppDevelopment/Developer/Shared Developer/Xcode/CMS App Files/CMS App/CMS App/CMSProgressView.swift"; sourceTree = "<group>"; };
+		44F8C1331CC8FB9D00707316 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BB3D8BE41B878912002B2453 /* CMS Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CMS Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3D8BF31B878912002B2453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BB3D8BF61B878912002B2453 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB3D8BF81B878912002B2453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB3D8BFD1B878912002B2453 /* CMS Now.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CMS Now.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3D8C011B878912002B2453 /* CMS_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMS_AppTests.swift; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44C094971C6BE7BB005F5340 /* CloudKit.framework in Frameworks */,
+				44F8C1341CC8FB9D00707316 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +174,8 @@
 		44AF4F541C6BDD9E000480FF /* Table Cells */ = {
 			isa = PBXGroup;
 			children = (
-				44AF4F521C6BDD96000480FF /* CMSAnnouncementCell.swift */,
+				443897271C6BDF34005FC567 /* Settings.bundle */,
+				44AF4F521C6BDD96000480FF /* CMSAnnouncementTableViewCell.swift */,
 				44AF4F5F1C6BDDF5000480FF /* CMSCategoryTableViewCell.swift */,
 				44AF4F5B1C6BDDE0000480FF /* CMSAttachmentTableViewCell.swift */,
 			);
@@ -217,10 +220,20 @@
 			name = Contexts;
 			sourceTree = "<group>";
 		};
+		44E59F791C8DF81200243AB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				443897251C6BDEFB005FC567 /* Main.storyboard */,
+				44E59F7A1C8DF83C00243AB6 /* CMSProgressView.xib */,
+				44E59F7C1C8DF8C300243AB6 /* CMSProgressView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		BB3D8BDB1B878911002B2453 = {
 			isa = PBXGroup;
 			children = (
-				44C094961C6BE7BB005F5340 /* CloudKit.framework */,
+				44F8C1331CC8FB9D00707316 /* CloudKit.framework */,
 				449AD6841BF4F95D001E064A /* CMS Now.entitlements */,
 				BB3D8BE61B878912002B2453 /* CMS App */,
 				BB3D8C001B878912002B2453 /* CMS AppTests */,
@@ -246,10 +259,8 @@
 				446D8FCD1BCC0F2C00AD2BB8 /* Controllers */,
 				BB3D8BF31B878912002B2453 /* Assets.xcassets */,
 				44AF4F371C6BDC86000480FF /* CMS_App.xcdatamodeld */,
-				443897251C6BDEFB005FC567 /* Main.storyboard */,
-				BB3D8BF51B878912002B2453 /* LaunchScreen.storyboard */,
+				44E59F791C8DF81200243AB6 /* Views */,
 				BB3D8BF81B878912002B2453 /* Info.plist */,
-				443897271C6BDF34005FC567 /* Settings.bundle */,
 			);
 			path = "CMS App";
 			sourceTree = "<group>";
@@ -342,6 +353,9 @@
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = F56849W7Q4;
 						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -387,7 +401,7 @@
 			files = (
 				443897281C6BDF34005FC567 /* Settings.bundle in Resources */,
 				443897261C6BDEFB005FC567 /* Main.storyboard in Resources */,
-				BB3D8BF71B878912002B2453 /* LaunchScreen.storyboard in Resources */,
+				44E59F7B1C8DF83C00243AB6 /* CMSProgressView.xib in Resources */,
 				BB3D8BF41B878912002B2453 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +436,7 @@
 				44AF4F3D1C6BDCBC000480FF /* CMSCoreDataBrain.swift in Sources */,
 				44AF4F2C1C6BDBF1000480FF /* CMSAnnouncement.swift in Sources */,
 				44AF4F641C6BDE13000480FF /* CMSResourcesTableViewController.swift in Sources */,
-				44AF4F531C6BDD96000480FF /* CMSAnnouncementCell.swift in Sources */,
+				44AF4F531C6BDD96000480FF /* CMSAnnouncementTableViewCell.swift in Sources */,
 				44AF4F581C6BDDCD000480FF /* CMSAnnouncementTableViewController.swift in Sources */,
 				44274A871C74A642007B19EB /* ScheduledClosure.swift in Sources */,
 				44AF4F4B1C6BDD24000480FF /* CMSUIBrain.swift in Sources */,
@@ -432,6 +446,7 @@
 				44AF4F5E1C6BDDE9000480FF /* CMSAttachmentTableViewController.swift in Sources */,
 				44AF4F3F1C6BDCCD000480FF /* CMSDateBrain.swift in Sources */,
 				44AF4F341C6BDC31000480FF /* CMSResource.swift in Sources */,
+				44E59F7D1C8DF8C300243AB6 /* CMSProgressView.swift in Sources */,
 				44AF4F511C6BDD5B000480FF /* CMSResourceContext.swift in Sources */,
 				44AF4F4F1C6BDD52000480FF /* CMSAttachmentContext.swift in Sources */,
 				44AF4F621C6BDE06000480FF /* CMSCategoryTableViewController.swift in Sources */,
@@ -478,17 +493,6 @@
 			targetProxy = BB3D8C091B878912002B2453 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		BB3D8BF51B878912002B2453 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BB3D8BF61B878912002B2453 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BB3D8C0F1B878912002B2453 /* Debug */ = {
@@ -578,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = "CMS Now.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -585,9 +590,10 @@
 				INFOPLIST_FILE = "CMS App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chambersburg.cms-now";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chambersburg.career-magnet-now";
 				PRODUCT_NAME = "CMS Now";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -595,6 +601,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = "CMS Now.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -602,9 +609,10 @@
 				INFOPLIST_FILE = "CMS App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chambersburg.cms-now";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chambersburg.career-magnet-now";
 				PRODUCT_NAME = "CMS Now";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

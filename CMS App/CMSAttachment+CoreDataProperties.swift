@@ -14,9 +14,9 @@ import CoreData
 
 extension CMSAttachment {
 
-    @NSManaged var filePath: String?
-    @NSManaged var title: String?
-    @NSManaged var type: String?
-    @NSManaged var announcements: NSSet?
+    @NSManaged var fileName: String!
+    @NSManaged var title: String!
+    @NSManaged var announcement: CMSAnnouncement?
+    @NSManaged var recordID: String!
 
 }

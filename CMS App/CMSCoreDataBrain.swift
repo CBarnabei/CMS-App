@@ -6,7 +6,6 @@
 //  Copyright © 2015 Magnet Library. All rights reserved.
 //
 
-import Foundation
 import CoreData
 import UIKit
 
@@ -120,16 +119,16 @@ final class CMSCoreDataBrain {
         var keyValuePairs = [String : AnyObject]()
         if object is CMSResource {
             let resource = object as! CMSResource
-            let recordID = resource.recordID
-            keyValuePairs = ["recordID": recordID]
+            let id = resource.recordID
+            keyValuePairs = ["recordID": id]
         } else if object is CMSAnnouncement {
             let announcememt = object as! CMSAnnouncement
-            let recordID = announcememt.recordID
-            keyValuePairs = ["recordID": recordID]
+            let id = announcememt.recordID
+            keyValuePairs = ["recordID": id]
         } else if object is CMSAttachment {
             let attachment = object as! CMSAttachment
-            let recordID = attachment.recordID
-            keyValuePairs = ["recordID": recordID]
+            let id = attachment.recordID
+            keyValuePairs = ["recordID": id]
         } else {
             throw CMSCoreDataError.InvalidObject(object: object)
         }

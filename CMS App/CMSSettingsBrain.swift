@@ -20,6 +20,8 @@ class CMSSettingsBrain {
     
     static let standardDefaults = NSUserDefaults.standardUserDefaults()
     
+    static let categoryKeys = ["announcement_category_lunch", "announcement_category_general", "announcement_category_events", "announcement_category_birthdays", "announcement_category_sports", "announcement_category_clubs", "announcement_category_counselor", "announcement_category_principal", "announcement_category_nurse", "announcement_category_ssb", "announcement_category_graduation", "announcement_category_ptsa", "announcement_category_fcctc"]
+    
     static let categoriesForKeys = ["announcement_category_lunch": "Lunch", "announcement_category_general": "General", "announcement_category_events": "Events", "announcement_category_birthdays": "Birthdays", "announcement_category_sports": "Sports", "announcement_category_clubs": "Clubs", "announcement_category_counselor": "Counselor", "announcement_category_principal": "Principal", "announcement_category_nurse": "Nurse", "announcement_category_ssb": "Student School Board", "announcement_category_graduation": "Graduation", "announcement_category_ptsa": "PTSA", "announcement_category_fcctc": "FCCTC"]
 
     /**

@@ -29,14 +29,11 @@ class CMSAnnouncementContext {
         
     }
     
-    private static func addAnnouncement(title: String, body: String, categoryKey: String, startDate: NSDate = NSDate(), endDate: NSDate, attachments: [CMSAttachment] = [], recordID: CKRecordID) throws -> CMSAnnouncement {
+    private static func addAnnouncement(title: String, body: String, categoryKey: String, categoryIndex: Int16, startDate: NSDate = NSDate(), endDate: NSDate, attachments: [CMSAttachment] = [], recordID: CKRecordID) throws -> CMSAnnouncement {
         
         // Validate Strings
         guard !title.isEmpty else { throw CMSAnnouncementError.EmptyTitle }
         guard !body.isEmpty else { throw CMSAnnouncementError.EmptyBody }
-        
-        // #warning uncomment below before release version
-        //guard startDate.compare(NSDate()) != NSComparisonResult.OrderedAscending else { throw CMSAnnouncementError.InvalidDate(date: dateStamp) }
         
         // Validate Attachments
         let validatedAttachments: [CMSAttachment]
@@ -58,6 +55,7 @@ class CMSAnnouncementContext {
         announcement.title = title
         announcement.formattedText = body
         announcement.category = categoryKey
+        announcement.categoryIndex = categoryIndex
         announcement.attachments = Set(validatedAttachments)
         announcement.startDate = startDate
         announcement.endDate = endDate.dateRetainingComponents(unitFlags: [.Month, .Day, .Year])
@@ -72,7 +70,7 @@ class CMSAnnouncementContext {
     }
     
     static func deleteAll() throws {
-        try CMSCoreDataBrain.deleteAllForEntity(entityName)
+        try CMSCoreDataBrain.deleteAllForEntity("CMSAnnouncement")
     }
     
     
@@ -92,7 +90,7 @@ class CMSAnnouncementContext {
         let recordID = record.recordID
         
         // Create announcement
-        try addAnnouncement(title, body: body, categoryKey: category, startDate: startDate, endDate: endDate, attachments: [], recordID: recordID)
+        try addAnnouncement(title, body: body, categoryKey: category, categoryIndex: Int16(CMSSettingsBrain.categoryKeys.indexOf(category)!), startDate: startDate, endDate: endDate, attachments: [], recordID: recordID)
         
     }
     
@@ -129,6 +127,7 @@ class CMSAnnouncementContext {
     static func changeCategory(newCategoryKey newCategoryKey: String, forRecordID recordID: CKRecordID) throws {
         try changeValue(forRecordID: recordID) { announcement in
             announcement.category = newCategoryKey
+            announcement.categoryIndex = Int16(CMSSettingsBrain.categoryKeys.indexOf(newCategoryKey)!)
         }
     }
     

@@ -1,8 +1,8 @@
 //
 //  CMSAnnouncement+CoreDataProperties.swift
-//  CMS App
+//  CMS Now
 //
-//  Created by App Development on 11/10/15.
+//  Created by App Development on 12/14/15.
 //  Copyright © 2015 com.chambersburg. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,10 +14,13 @@ import CoreData
 
 extension CMSAnnouncement {
 
-    @NSManaged var category: String?
-    @NSManaged var formattedText: String?
-    @NSManaged var title: String?
+    @NSManaged var category: String!
+    @NSManaged var categoryIndex: Int16
     @NSManaged var endDate: NSDate
-    @NSManaged var attachments: NSSet?
+    @NSManaged var formattedText: String!
+    @NSManaged var title: String!
+    @NSManaged var startDate: NSDate
+    @NSManaged var attachments: NSSet!
+    @NSManaged var recordID: String!
 
 }

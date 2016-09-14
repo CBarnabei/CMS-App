@@ -20,45 +20,10 @@ class CMSResourcesTableViewController: UITableViewController, SFSafariViewContro
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        do {
-            try CMSResourceContext.addResource("HomeLogic", urlString: "https://logic.chambersburg.k12.pa.us/homelogic/")
-            try CMSResourceContext.addResource("Tech Handbook", urlString: "http://chambersburg.libguides.com/content.php?pid=479993&sid=3933158")
-            try CMSResourceContext.addResource("Library Resources", urlString: "http://chambersburg.libguides.com/content.php?pid=479993&sid=3933172")
-            try CMSResourceContext.addResource("CMS Homepage", urlString: "http://www.casdonline.org/education/school/school.php?sectionid=2591&")
-            try CMSResourceContext.addResource("CASD Homepage", urlString: "http://www.casdonline.org/")
-            try CMSResourceContext.addResource("CMStival", urlString: "http://cmstival.jimdo.com")
-        } catch { print("Failed to add Resource") }
-        
         fetchResources()
-        if let resourceArray = resources {
-            tableView.rowHeight = 44
-            
-            let regularSize = CGSizeMake(320, tableView.rowHeight * CGFloat(resourceArray.count))
-            let fixedSizeWhenStartingFromCompact = CGSizeMake(320, tableView.rowHeight * CGFloat(resourceArray.count - 1))
-            
-            let tableSize: CGSize
-            if presentingViewController!.traitCollection.horizontalSizeClass == .Regular {
-                tableSize = regularSize
-            } else if presentingViewController!.traitCollection.horizontalSizeClass == .Compact {
-                tableSize = fixedSizeWhenStartingFromCompact
-            } else {
-                tableSize = regularSize
-            }
-            preferredContentSize = tableSize
-
-        } else {
-            let fetchFailureAlert = UIAlertController(title: "Something Went Wrong", message: "An error occured while fetching resources. Please try again later. If the error persists, contact the app's developers.", preferredStyle: UIAlertControllerStyle.Alert)
-            let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-            fetchFailureAlert.addAction(okButton)
-            presentViewController(fetchFailureAlert, animated: true, completion: nil)
-        }
+        setBarForPopover()
+        sizeTable(rowCount: resources.count)
         
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        do {
-            try CMSCoreDataBrain.deleteEverything()
-        } catch { print("deleting everything failed") }
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,8 +37,8 @@ class CMSResourcesTableViewController: UITableViewController, SFSafariViewContro
 
     // MARK: - Table view data source
     
-    let cellID = "ResourceCell"
-    var resources: [CMSMockResource]?
+    let cellID = "resourceCell"
+    var resources = [CMSMockResource]()
     
     func fetchResources() {
         do {
@@ -89,9 +54,7 @@ class CMSResourcesTableViewController: UITableViewController, SFSafariViewContro
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // We should have as many rows as there are resources
         
-        if let resourceArray = resources {
-            return resourceArray.count
-        } else { return 0 }
+        return resources.count
         
     }
 
@@ -99,19 +62,17 @@ class CMSResourcesTableViewController: UITableViewController, SFSafariViewContro
         let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath)
 
         // Configure the cell...
-        if let resourceArray = resources {
-            cell.textLabel?.text = resourceArray[indexPath.row].label
-        }
+        cell.textLabel?.text = resources[indexPath.row].label
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let resourceArray = resources {
-            let url = resourceArray[indexPath.row].url
-            let sfvc = SFSafariViewController(URL: url)
-            presentViewController(sfvc, animated: true, completion: nil)
-        }
+        let url = resources[indexPath.row].url
+        let sfvc = SFSafariViewController(URL: url)
+        sfvc.modalPresentationStyle = .OverFullScreen
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        navigationController?.presentViewController(sfvc, animated: true, completion: nil)
     }
 
     /*

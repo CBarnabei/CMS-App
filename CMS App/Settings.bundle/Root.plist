@@ -14,7 +14,7 @@
 			<key>Key</key>
 			<string>theme_color</string>
 			<key>DefaultValue</key>
-			<integer>8</integer>
+			<integer>6</integer>
 			<key>Titles</key>
 			<array>
 				<string>Dark Night</string>
@@ -45,7 +45,7 @@
 				<integer>9</integer>
 				<integer>10</integer>
 				<integer>11</integer>
-				<string>12</string>
+				<integer>12</integer>
 			</array>
 		</dict>
 		<dict>
@@ -61,6 +61,22 @@
 			<string>Categories</string>
 			<key>File</key>
 			<string>Categories</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Advanced</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Hard Refresh on Next Launch</string>
+			<key>Key</key>
+			<string>hard_refresh</string>
+			<key>DefaultValue</key>
+			<false/>
 		</dict>
 	</array>
 </dict>

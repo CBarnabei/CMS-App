@@ -64,9 +64,7 @@ class CMSResourceContext {
     }
     
     static func deleteAll() throws {
-        
         try CMSCoreDataBrain.deleteAllForEntity("CMSResource")
-        
     }
     
     

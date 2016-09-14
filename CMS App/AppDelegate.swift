@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CloudKit
 
 var appColorProfile: CMSColorProfile {
     
@@ -21,7 +22,17 @@ var appColorProfile: CMSColorProfile {
 
 }
 
+let CMSSelectAnnouncementNotification = "CMSSelectAnnouncementNotification"
+
 let syncManager = CMSSyncManager()
+
+var launchedFromNotification = false
+
+var initialAnnouncement: CMSAnnouncement? {
+    didSet {
+        NSNotificationCenter.defaultCenter().postNotificationName(CMSSelectAnnouncementNotification, object: nil)
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -35,6 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        if let _ = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [NSObject : AnyObject] {
+            launchedFromNotification = true
+        }
+        
+        createFileSystem()
+        
         registerDefaults()
         
         updateTint()
@@ -42,13 +59,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             self.updateTint()
         }
         
-        syncManager.refreshResources() {
-            syncManager.refreshAnnouncements() {
-                syncManager.refreshAttachments()
-            }
-        }
+        subscribeToCloudKit()
+        registerForNotifications()
+        
+        print(try! CMSAnnouncementContext.fetchAnnouncements())
         
         return true
+    }
+    
+    func createFileSystem() {
+        
+        let attachmentsPath = CMSFileBrain.pathInDocumentsForFileName("Attachments/")
+        do {
+            if !NSFileManager.defaultManager().fileExistsAtPath(attachmentsPath) {
+                try CMSFileBrain.createFolder(attachmentsPath)
+            }
+        } catch { NSLog("\(error)"); abort() }
     }
     
     func registerDefaults() {
@@ -67,6 +93,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         defaults["announcement_category_ptsa"] = true
         defaults["announcement_category_fcctc"] = true
         defaults["theme_color"] = 6
+        defaults["last_updated"] = NSDate()
+        defaults["never_updated"] = true
+        defaults["hard_refresh"] = false
         CMSSettingsBrain.registerDefaults(defaults)
     }
     
@@ -102,6 +131,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             let errorString = "Unresolved error \(nserror), \(nserror.userInfo)"
             NSLog(errorString)
         }
+    }
+    
+    
+    // MARK: - Notifications
+    
+    func subscribeToCloudKit() {
+        
+        CMSSyncManager.subscribeToResources()
+        
+        CMSSyncManager.subscribeToAnnouncementCreation()
+        //CMSSyncManager.subscribeToOtherAnnouncementCreation()
+        CMSSyncManager.subscribeToAnnouncementChanges()
+        //CMSSyncManager.subscribeToOtherAnnouncementChanges()
+        CMSSyncManager.subscribeToAnnouncementDeletion()
+        
+        CMSSyncManager.subscribeToAttachments()
+        
+    }
+    
+    func registerForNotifications() {
+        
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("Received remote notification: \(userInfo)")
+        
+        let notification = CKNotification(fromRemoteNotificationDictionary: userInfo as! [String : NSObject])
+        
+        if notification.notificationType == .Query {
+            syncManager.processNotification(notification as! CKQueryNotification) { _, shouldRefreshAttachments in
+                if shouldRefreshAttachments { syncManager.refreshAttachments() }
+            }
+        }
+        
     }
     
     
@@ -141,6 +209,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            print("Store at \(url)")
         } catch {
             // Report any error we got.
             var dict = [String: AnyObject]()
